@@ -1,0 +1,183 @@
+{
+    "info": {
+      "name": "Gamification API Collection",
+      "description": "Colección para probar la API de Flask de gamificación.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Add or Update Subject",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/add_or_update_subject/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["add_or_update_subject", "1"]
+          },
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {"key": "lat", "value": "10.0", "type": "text"},
+              {"key": "lon", "value": "20.0", "type": "text"},
+              {"key": "country", "value": "Country", "type": "text"},
+              {"key": "city", "value": "City", "type": "text"},
+              {"key": "region", "value": "Region", "type": "text"},
+              {"key": "language", "value": "English", "type": "text"}
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete User",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/delete_user/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["delete_user", "1"]
+          }
+        }
+      },
+      {
+        "name": "Increase Value",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/increase_value/variable_name/1/key",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["increase_value", "variable_name", "1", "key"]
+          },
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {"key": "value", "value": "5.0", "type": "text"}
+            ]
+          }
+        }
+      },
+      {
+        "name": "Increase Multi Values",
+        "request": {
+          "method": "POST",
+          "header": [{"key": "Content-Type", "value": "application/json"}],
+          "url": {
+            "raw": "http://localhost:5000/increase_multi_values",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["increase_multi_values"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"1\": {\n    \"variable\": [\n      {\"key\": \"key1\", \"value\": 2.0}\n    ]\n  }\n}"
+          }
+        }
+      },
+      {
+        "name": "Get User Progress",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/progress/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["progress", "1"]
+          }
+        }
+      },
+      {
+        "name": "Get Achievement Level",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/achievement/1/level/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["achievement", "1", "level", "1"]
+          }
+        }
+      },
+      {
+        "name": "User Authentication",
+        "request": {
+          "method": "POST",
+          "header": [{"key": "Content-Type", "value": "application/json"}],
+          "url": {
+            "raw": "http://localhost:5000/auth/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["auth", "login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}"
+          }
+        }
+      },
+      {
+        "name": "Register Device for Push Messages",
+        "request": {
+          "method": "POST",
+          "header": [{"key": "Content-Type", "value": "application/json"}],
+          "url": {
+            "raw": "http://localhost:5000/register_device/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["register_device", "1"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"device_id\": \"12345\",\n  \"push_id\": \"67890\",\n  \"device_os\": \"Android\",\n  \"app_version\": \"1.0\"\n}"
+          }
+        }
+      },
+      {
+        "name": "Get Messages",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/messages/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["messages", "1"]
+          }
+        }
+      },
+      {
+        "name": "Set Messages Read",
+        "request": {
+          "method": "POST",
+          "header": [{"key": "Content-Type", "value": "application/json"}],
+          "url": {
+            "raw": "http://localhost:5000/read_messages/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["read_messages", "1"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"message_id\": \"123\"\n}"
+          }
+        }
+      }
+    ]
+  }
+  
