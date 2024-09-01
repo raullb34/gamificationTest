@@ -12,13 +12,4 @@ def create_app():
     # Establecer la conexión a la base de datos
     app.db_connection = psycopg2.connect(Config.get_db_uri())
 
-    # Importar e inicializar modelos
-    with app.app_context():
-        from .models import init_app as init_models
-        init_models(app)  # Inicializar los modelos y crear las tablas
-
-    # Importar y registrar rutas
-    from .routes import register_routes
-    register_routes(app)
-
     return app

@@ -18,6 +18,7 @@ classes = [
     {'name': 'achievements_rewards', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
     {'name': 'achievements_users', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
     {'name': 'goals', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
+    {'name': 'goals_goalproperties', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
     {'name': 'goal_triggers', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
     {'name': 'goal_trigger_steps', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
     {'name': 'goal_trigger_executions', 'methods': ['create', 'read_all', 'read_one', 'update', 'delete']},
@@ -84,7 +85,8 @@ def generate_route_files():
         class_name = class_info['name']
         methods = class_info['methods']
         file_path = os.path.join(ROUTES_DIR, f"{class_name}.py")
-        with open(file_path, 'w') as f:
+        # Asegurar la codificación UTF-8 al escribir el archivo
+        with open(file_path, 'w', encoding='utf-8') as f:
             f.write(generate_route_code(class_name, methods))
         print(f"Archivo generado: {file_path}")
 

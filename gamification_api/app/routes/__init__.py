@@ -32,7 +32,7 @@ from .user_messages import user_messages_bp
 from .goal_evaluation_cache import goal_evaluation_cache_bp
 from .denials import denials_bp
 from .requirements import requirements_bp
-from .goals_goalproperties import goals_goalproperties_bp  # Importación corregida y verificada
+from .goals_goalproperties import goals_goalproperties_bp
 
 # Registrar los blueprints de cada archivo de rutas
 def register_routes(app):
@@ -64,4 +64,4 @@ def register_routes(app):
     app.register_blueprint(goal_evaluation_cache_bp)
     app.register_blueprint(denials_bp)
     app.register_blueprint(requirements_bp)
-    app.register_blueprint(goals_goalproperties_bp)  # Registrar el blueprint
+    app.register_blueprint(goals_goalproperties_bp)

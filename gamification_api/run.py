@@ -1,8 +1,7 @@
 from app import create_app
 import logging
 from app.models import init_app as init_models
-from app.routes import register_routes as register_routes
-
+from app.routes import register_routes
 
 # Configuración de logging
 logging.basicConfig(level=logging.INFO)
